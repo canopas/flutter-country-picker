@@ -35,6 +35,7 @@ class DefaultCountryCodeFilterTextField extends StatelessWidget {
       padding: margin,
       child: TextField(
         decoration: InputDecoration(
+          hintText: hintText,
           isDense: true,
           filled: true,
           prefixIcon: prefixIcon,
