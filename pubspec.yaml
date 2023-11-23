@@ -1,0 +1,23 @@
+name: country_code_picker
+description: fully customizable Flutter library that allows developers to integrate a feature-rich country code picker into their applications. It includes built-in filtering options for easily selecting and displaying country codes based on search.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
+
+
+
