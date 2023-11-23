@@ -16,8 +16,7 @@ class CountryCodeSelector extends StatefulWidget {
 
   const CountryCodeSelector({
     super.key,
-    this.countryListPadding =
-        const EdgeInsets.only(bottom: 16, left: 16, top: 8, right: 16),
+    this.countryListPadding = const EdgeInsets.all(0),
     this.filterFieldPadding =
         const EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
     required this.scrollController,

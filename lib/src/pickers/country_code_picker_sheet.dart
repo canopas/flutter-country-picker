@@ -12,6 +12,10 @@ Future<CountryCode?> showCountryCodePickerSheet({
       const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   CustomizationBuilders? customizationBuilders,
   Color backgroundColor = Colors.white,
+  double maxSize = 1,
+  double initialSize = 0.5,
+  double minSize = 0.5,
+  bool snap = true,
   ShapeBorder shape = const RoundedRectangleBorder(
     borderRadius: BorderRadius.vertical(
       top: Radius.circular(24),
@@ -26,9 +30,10 @@ Future<CountryCode?> showCountryCodePickerSheet({
     context: context,
     builder: (context) => DraggableScrollableSheet(
       expand: false,
-      maxChildSize: 1,
-      minChildSize: 0.5,
-      snap: true,
+      maxChildSize: maxSize,
+      initialChildSize: initialSize,
+      minChildSize: minSize,
+      snap: snap,
       builder: (context, scrollController) {
         return CountryCodeSelector(
           countryListPadding: countryListPadding,
