@@ -91,7 +91,7 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
                 itemCount: filteredCodes.length,
                 separatorBuilder:
                     widget.customizationBuilders?.codeSeparatorBuilder ??
-                        (context, index) => const SizedBox(height: 16),
+                        (context, index) => const SizedBox(height: 0),
                 itemBuilder: (context, index) =>
                     widget.customizationBuilders?.codeBuilder
                         ?.call(filteredCodes[index]) ??

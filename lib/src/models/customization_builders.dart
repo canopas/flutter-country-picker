@@ -21,7 +21,7 @@ class CustomizationBuilders {
   final Widget Function(List<CountryCode> codes, ScrollController controller)?
       countryListBuilder;
 
-  ///Default sized box with a height of 16.
+  ///Used for separate country list items.
   final Widget Function(BuildContext context, int index)? codeSeparatorBuilder;
 
   const CustomizationBuilders({

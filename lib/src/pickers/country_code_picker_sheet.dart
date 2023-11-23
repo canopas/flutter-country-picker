@@ -6,8 +6,7 @@ import 'package:country_code_picker/src/country_code_selector.dart';
 Future<CountryCode?> showCountryCodePickerSheet({
   required BuildContext context,
   void Function(CountryCode code)? onCountryCodeTap,
-  EdgeInsets countryListPadding =
-      const EdgeInsets.only(top: 8, left: 16, bottom: 16, right: 16),
+  EdgeInsets countryListPadding = const EdgeInsets.all(0),
   EdgeInsets filterTextFieldPadding =
       const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   CustomizationBuilders? customizationBuilders,
