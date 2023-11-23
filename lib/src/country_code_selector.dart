@@ -1,5 +1,5 @@
-import 'package:country_code_picker/src/views/default_country_code_filter_text_field.dart';
-import 'package:country_code_picker/src/views/default_country_code_list_item_view.dart';
+import 'views/default_country_code_filter_text_field.dart';
+import 'views/default_country_code_list_item_view.dart';
 import 'package:flutter/material.dart';
 import 'models/country_code.dart';
 import 'models/customization_builders.dart';
@@ -8,7 +8,7 @@ import 'models/customization_builders.dart';
 /// to choose a country code from a country code list.
 /// It includes a filter country by search.
 class CountryCodeSelector extends StatefulWidget {
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
   final void Function(CountryCode code)? onCountryCodeTap;
   final EdgeInsets countryListPadding;
   final EdgeInsets filterFieldPadding;
@@ -19,7 +19,7 @@ class CountryCodeSelector extends StatefulWidget {
     this.countryListPadding = const EdgeInsets.all(0),
     this.filterFieldPadding =
         const EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
-    required this.scrollController,
+    this.scrollController,
     required this.onCountryCodeTap,
     this.customizationBuilders,
   });

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:country_code_picker/src/models/country_code.dart';
-import 'package:country_code_picker/src/models/customization_builders.dart';
-import 'package:country_code_picker/src/country_code_selector.dart';
+import '../country_code_selector.dart';
+import '../models/country_code.dart';
+import '../models/customization_builders.dart';
 
 Future<CountryCode?> showCountryCodePickerSheet({
   required BuildContext context,

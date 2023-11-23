@@ -24,7 +24,8 @@ class DefaultCountryCodeListItemView extends StatelessWidget {
     this.dialCodeStyle = const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
-        overflow: TextOverflow.visible),  this.padding = const EdgeInsets.symmetric(vertical: 8, horizontal:  16),
+        overflow: TextOverflow.visible),
+    this.padding = const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
   });
 
   @override

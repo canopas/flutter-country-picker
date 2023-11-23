@@ -18,7 +18,7 @@ class CustomizationBuilders {
   /// If you want to use the default country code view, use [DefaultCountryCodeListItemView].
   ///
   /// Note: It overrides the code builder.
-  final Widget Function(List<CountryCode> codes, ScrollController controller)?
+  final Widget Function(List<CountryCode> codes, ScrollController? controller)?
       countryListBuilder;
 
   ///Used for separate country list items.

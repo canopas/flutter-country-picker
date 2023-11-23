@@ -1,4 +1,4 @@
-import 'package:country_code_picker/src/constants/country_codes.dart';
+import '../constants/country_codes.dart';
 
 class CountryCode {
   final String name;

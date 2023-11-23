@@ -1,4 +1,4 @@
-library country_code_picker;
+library canopas_country_picker;
 
 //Models
 export 'src/models/country_code.dart';
