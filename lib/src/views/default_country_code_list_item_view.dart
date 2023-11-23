@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '../models/country_code.dart';
 
 /// Default view for country code list item
@@ -28,8 +28,8 @@ class DefaultCountryCodeListItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
-      onPressed: onCountryCodeTap,
+    return InkWell(
+      onTap: onCountryCodeTap,
       child: Row(
         children: [
           Text(
