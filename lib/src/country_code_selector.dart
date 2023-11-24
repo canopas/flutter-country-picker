@@ -51,7 +51,7 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
 
   @override
   void initState() {
-    filteredCodes = CountryCode.allCodes;
+    filteredCodes = CountryCode.allCodes.toList();
     super.initState();
   }
 
