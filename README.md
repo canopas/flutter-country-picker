@@ -1,6 +1,4 @@
-Fully customizable Flutter library that allows developers to integrate a feature-rich country code picker 
-into their applications. It includes built-in filtering options for easily selecting and displaying country 
-codes based on search.
+Customizable Flutter library for easy integration of a feature-rich country code picker with built-in filtering options for code selection based on search.
 
 ## Preview
 
