@@ -55,7 +55,7 @@ CountryCode code = CountryCode.getCountryCodeByAlpha2(
     /// if you have context, use View.of(context).platformDispatcher.locale.countryCode
 );
 ```
-> Note: PlatformDispatcher and View.of(context) are provided by the Flutter SDK.
+> Note: WidgetsBinding and View.of(context) are provided by the Flutter SDK.
 
 <br/>
 
