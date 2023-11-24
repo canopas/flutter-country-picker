@@ -20,6 +20,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
       top: Radius.circular(24),
     ),
   ),
+  String? countryNameLocale,
 }) async {
   return await showModalBottomSheet(
     isScrollControlled: true,
@@ -35,6 +36,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
       snap: snap,
       builder: (context, scrollController) {
         return CountryCodeSelector(
+          countryNameLocale: countryNameLocale,
           countryListPadding: countryListPadding,
           filterFieldPadding: filterTextFieldPadding,
           scrollController: scrollController,

@@ -6,6 +6,7 @@ export 'src/models/customization_builders.dart';
 
 //Pickers
 export 'src/pickers/country_code_picker_sheet.dart';
+export 'src/pickers/country_code_picker_dialog.dart';
 export 'src/country_code_selector.dart';
 
 //Default Views

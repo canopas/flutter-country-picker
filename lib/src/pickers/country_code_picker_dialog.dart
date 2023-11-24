@@ -25,6 +25,7 @@ Future<CountryCode?> showCountryCodePickerDialog({
   double initialSize = 0.5,
   double minSize = 0.5,
   bool snap = true,
+  String? countryNameLocale,
 }) async {
   return await showDialog(
     barrierColor: barrierColor,
@@ -44,6 +45,7 @@ Future<CountryCode?> showCountryCodePickerDialog({
         color: color,
         child: SafeArea(
           child: CountryCodeSelector(
+            countryNameLocale: countryNameLocale,
             countryListPadding: countryListPadding,
             filterFieldPadding: filterTextFieldPadding,
             customizationBuilders: customizationBuilders,

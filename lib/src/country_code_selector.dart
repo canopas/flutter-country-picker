@@ -8,6 +8,7 @@ import 'models/customization_builders.dart';
 /// to choose a country code from a country code list.
 /// It includes a filter country by search.
 class CountryCodeSelector extends StatefulWidget {
+  final String? countryNameLocale;
   final ScrollController? scrollController;
   final void Function(CountryCode code)? onCountryCodeTap;
   final EdgeInsets countryListPadding;
@@ -22,6 +23,7 @@ class CountryCodeSelector extends StatefulWidget {
     this.scrollController,
     required this.onCountryCodeTap,
     this.customizationBuilders,
+    this.countryNameLocale,
   });
 
   @override
@@ -96,6 +98,7 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
                     widget.customizationBuilders?.codeBuilder
                         ?.call(filteredCodes[index]) ??
                     DefaultCountryCodeListItemView(
+                      locale: widget.countryNameLocale,
                       code: filteredCodes[index],
                       onCountryCodeTap: () {
                         widget.onCountryCodeTap?.call(filteredCodes[index]);
