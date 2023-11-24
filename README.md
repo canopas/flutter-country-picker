@@ -4,7 +4,7 @@ Customizable Flutter library for easy integration of a feature-rich country code
 
 | Bottom Sheet | Dialog | UI Element |
 | --- | --- | --- |
-| <img src="screenshots/country_picker_sheet_initial.png" width="200"> <img src="screenshots/country_picker_sheet_max_height.png" width="200"> | <img src="screenshots/country_picker_dialog.png" width="200"> | <img src="screenshots/country_picker_ui_component.png" width="200">|
+| <img src="screenshots/country_picker_sheet_initial.png" width="180"> <img src="screenshots/country_picker_sheet_max_height.png" width="180"> | <img src="screenshots/country_picker_dialog.png" width="180"> | <img src="screenshots/country_picker_ui_component.png" width="180">|
 
 <br/>
 
