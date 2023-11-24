@@ -13,12 +13,95 @@ codes based on search.
 ### UI Component
 <img src="screenshots/country_picker_ui_component.png" width="243">
 
+<br/>
 
 ## How To Use
+
+If you want to show country picker bottom sheet, use
 ```dart
-const like = 'sample';
+CountryCode? code = await showCountryCodePickerSheet(context: context);
 ```
 
+<br/>
+
+If you want to show country picker dialog, use
+```dart
+CountryCode? code = await showCountryCodePickerSheet(context: context);
+```
+
+<br/>
+
+If you want to show country list as UI Component, use CountryCodeSelector Widget
+```dart
+CountryCodeSelector(
+   onCountryCodeTap: (CountryCode code) {
+      /// Specify country code tap event
+   },
+)
+```
+
+<br/>
+
+How to get country code from country [alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2),
+```dart
+CountryCode code = CountryCode.getCountryCodeByAlpha2(
+    countryAlpha2Code:"IN", // its case-insensitive you can use both IN or in
+);
+```      
+You can also get current country alpha-2 code based on user device region, using PlatformDispatcher [locale](https://api.flutter.dev/flutter/dart-ui/PlatformDispatcher/locale.html).
+```dart
+CountryCode code = CountryCode.getCountryCodeByAlpha2(
+    countryAlpha2Code: WidgetsBinding.instance.platformDispatcher.locale.countryCode, 
+    /// if you have context, use View.of(context).platformDispatcher.locale.countryCode
+);
+```
+> Note: PlatformDispatcher and View.of(context) are provided by the Flutter SDK.
+
+<br/>
+
+How to get country code from country [dial code](https://en.wikipedia.org/wiki/List_of_country_calling_codes),
+```dart
+CountryCode code = CountryCode.getCountryCodeByDialCode(
+    dialCode: "+91",
+);
+```
+### Customizations
+For customizations, we are providing the CustomizationBuilders class to customize each section.
+```dart
+customizationBuilders: CustomizationBuilders(
+  codeBuilder: (CountryCode code) {
+    // Return something to change the country list item UI.
+
+   // If want to do some customization in default country code view, you can use
+    return DefaultCountryCodeListItemView(
+      onCountryCodeTap: () {},
+      code: code,
+      locale: 'US', // To show a localized country name,
+    );
+  },
+  
+  codeSeparatorBuilder: (BuildContext context, int index) {
+    // Return something to add a separator between country codes.
+    return const SizedBox(); // Default
+  },
+  
+  countryListBuilder: (List<CountryCode> codes, ScrollController? controller) {
+    // Return something to customize the country list
+  },
+  
+  textFieldBuilder: (void Function(String)? filter) {
+    // Return the search text field widget
+    //
+    // If you want to do some customization in the default text field, you can use
+    return DefaultCountryCodeFilterTextField(
+      filter: filter,
+    );
+
+    // Use filter(searchText); to update the country code list.
+  },
+),
+```
+<br/>
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](#bugs-and-feedback).
 
