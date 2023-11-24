@@ -15,7 +15,7 @@ codes based on search.
 
 <br/>
 
-## How To Use
+## How to use
 
 If you want to show the country picker bottom sheet, use:
 ```dart
