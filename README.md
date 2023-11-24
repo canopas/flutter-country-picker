@@ -17,21 +17,21 @@ codes based on search.
 
 ## How To Use
 
-If you want to show country picker bottom sheet, use
+If you want to show the country picker bottom sheet, use:
 ```dart
 CountryCode? code = await showCountryCodePickerSheet(context: context);
 ```
 
 <br/>
 
-If you want to show country picker dialog, use
+If you want to show the country picker dialog, use:
 ```dart
-CountryCode? code = await showCountryCodePickerSheet(context: context);
+CountryCode? code = await showCountryCodePickerDialog(context: context);
 ```
 
 <br/>
 
-If you want to show country list as UI Component, use CountryCodeSelector Widget
+If you want to show the country list as a UI component, use the CountryCodeSelector widget:
 ```dart
 CountryCodeSelector(
    onCountryCodeTap: (CountryCode code) {
@@ -42,13 +42,13 @@ CountryCodeSelector(
 
 <br/>
 
-How to get country code from country [alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2),
+How to get a country code from the country [alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2):,
 ```dart
 CountryCode code = CountryCode.getCountryCodeByAlpha2(
     countryAlpha2Code:"IN", // its case-insensitive you can use both IN or in
 );
 ```      
-You can also get current country alpha-2 code based on user device region, using PlatformDispatcher [locale](https://api.flutter.dev/flutter/dart-ui/PlatformDispatcher/locale.html).
+You can also get the current country alpha-2 code based on the user's device region, using PlatformDispatcher [locale](https://api.flutter.dev/flutter/dart-ui/PlatformDispatcher/locale.html).
 ```dart
 CountryCode code = CountryCode.getCountryCodeByAlpha2(
     countryAlpha2Code: WidgetsBinding.instance.platformDispatcher.locale.countryCode, 
@@ -59,12 +59,23 @@ CountryCode code = CountryCode.getCountryCodeByAlpha2(
 
 <br/>
 
-How to get country code from country [dial code](https://en.wikipedia.org/wiki/List_of_country_calling_codes),
+How to get a country code from the country [dial code](https://en.wikipedia.org/wiki/List_of_country_calling_codes),
 ```dart
 CountryCode code = CountryCode.getCountryCodeByDialCode(
     dialCode: "+91",
 );
 ```
+
+<br/>
+
+If you want to show the localized country name, use:
+```dart
+String? l10nCountryName = countryCode.localizedName("en");
+```
+
+<br/>
+
+
 ### Customizations
 For customizations, we are providing the CustomizationBuilders class to customize each section.
 ```dart
@@ -101,6 +112,8 @@ customizationBuilders: CustomizationBuilders(
   },
 ),
 ```
+
+
 <br/>
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](#bugs-and-feedback).
