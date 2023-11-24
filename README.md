@@ -5,14 +5,13 @@ codes based on search.
 ## Preview
 
 ### Bottom sheet picker
-<img src="screenshots/country_picker_sheet_initial.png" width="200">
-<img src="screenshots/country_picker_sheet_max_height.png" width="200">
+<img src="screenshots/country_picker_sheet_initial.png" width="243"> | <img src="screenshots/country_picker_sheet_max_height.png" width="243">
 
 ### Dialog
-<img src="screenshots/country_picker_dialog.png" width="200">
+<img src="screenshots/country_picker_dialog.png" width="243">
 
 ### UI Component
-<img src="screenshots/country_picker_ui_component.png" width="200">
+<img src="screenshots/country_picker_ui_component.png" width="243">
 
 
 ## How To Use
