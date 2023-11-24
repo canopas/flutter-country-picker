@@ -117,7 +117,7 @@ customizationBuilders: CustomizationBuilders(
 <br/>
 
 ## Bugs and Feedback
-For bugs, questions and discussions please use the [Github Issues](#bugs-and-feedback).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/canopas/flutter-country-picker/issues).
 
 ## Credits
 Canopas Country Picker is owned and maintained by the [Canopas team](https://canopas.com/).
