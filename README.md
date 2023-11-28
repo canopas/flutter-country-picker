@@ -2,14 +2,9 @@ Customizable Flutter library for easy integration of a feature-rich country code
 
 ## Preview
 
-### Bottom sheet picker
-<img src="screenshots/country_picker_sheet_initial.png" width="243"> | <img src="screenshots/country_picker_sheet_max_height.png" width="243">
-
-### Dialog
-<img src="screenshots/country_picker_dialog.png" width="243">
-
-### UI Component
-<img src="screenshots/country_picker_ui_component.png" width="243">
+| Bottom Sheet | Dialog | UI Element |
+| --- | --- | --- |
+| <img src="screenshots/country_picker_sheet_initial.png" width="180"> <img src="screenshots/country_picker_sheet_max_height.png" width="180"> | <img src="screenshots/country_picker_dialog.png" width="180"> | <img src="screenshots/country_picker_ui_component.png" width="180">|
 
 <br/>
 
@@ -115,7 +110,7 @@ customizationBuilders: CustomizationBuilders(
 <br/>
 
 ## Bugs and Feedback
-For bugs, questions and discussions please use the [Github Issues](https://github.com/canopas/flutter-country-picker/issues).
+For bugs, feedback, questions and discussions please use the [Github Issues](https://github.com/canopas/flutter-country-picker/issues).
 
 ## Credits
 Canopas Country Picker is owned and maintained by the [Canopas team](https://canopas.com/).
