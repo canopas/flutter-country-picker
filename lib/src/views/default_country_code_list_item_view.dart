@@ -14,7 +14,7 @@ class DefaultCountryCodeListItemView extends StatelessWidget {
   const DefaultCountryCodeListItemView({
     super.key,
     this.locale,
-    required this.onCountryCodeTap,
+    this.onCountryCodeTap,
     required this.code,
     this.nameStyle = const TextStyle(
         fontSize: 16,
