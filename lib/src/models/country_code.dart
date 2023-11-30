@@ -65,8 +65,20 @@ class CountryCode {
 
   static List<CountryCode> get allCodes => CountryCodesConst.allCountryCodes;
 
+  String get dialCodeWithoutPlusPrefix => dialCode.toString().substring(1);
+
   ///Retrieves a localized country name.
   String localizedName(String languageCode) {
     return nameTranslations[languageCode] ?? name;
   }
+
+  @override
+  int get hashCode =>
+      name.hashCode ^
+      flag.hashCode ^
+      code.hashCode ^
+      dialCode.hashCode ^
+      nameTranslations.hashCode ^
+      minLength.hashCode ^
+      maxLength.hashCode;
 }
