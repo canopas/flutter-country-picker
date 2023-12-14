@@ -19,36 +19,39 @@ Future<CountryCode?> showCountryCodePickerSheet({
   ),
   String? countryNameLocale,
 }) async {
-  final sheetDefinedSize = initialSize +
-      (MediaQuery.of(context).size.height /
-          MediaQuery.of(context).viewInsets.bottom);
-  final sheetActualSize =
-      sheetDefinedSize < maxSize ? sheetDefinedSize : maxSize;
   return await showModalBottomSheet(
     isScrollControlled: true,
     useSafeArea: true,
     backgroundColor: backgroundColor,
     shape: shape,
     context: context,
-    builder: (context) => DraggableScrollableSheet(
-      expand: false,
-      maxChildSize: maxSize,
-      initialChildSize: sheetActualSize,
-      minChildSize: minSize,
-      snap: snap,
-      builder: (context, scrollController) {
-        return CountryCodeSelector(
-          shape: shape,
-          countryNameLocale: countryNameLocale,
-          scrollController: scrollController,
-          customizationBuilders: customizationBuilders,
-          backgroundColor: backgroundColor,
-          onCountryCodeTap: onCountryCodeTap ??
-              (CountryCode code) {
-                Navigator.pop(context, code);
-              },
-        );
-      },
-    ),
+    builder: (context) {
+      final sheetDefinedSize = initialSize +
+          (MediaQuery.of(context).size.height /
+              MediaQuery.of(context).viewInsets.bottom);
+      final sheetActualSize =
+          sheetDefinedSize < maxSize ? sheetDefinedSize : maxSize;
+
+      return DraggableScrollableSheet(
+        expand: false,
+        maxChildSize: maxSize,
+        initialChildSize: sheetActualSize,
+        minChildSize: minSize,
+        snap: snap,
+        builder: (context, scrollController) {
+          return CountryCodeSelector(
+            shape: shape,
+            countryNameLocale: countryNameLocale,
+            scrollController: scrollController,
+            customizationBuilders: customizationBuilders,
+            backgroundColor: backgroundColor,
+            onCountryCodeTap: onCountryCodeTap ??
+                (CountryCode code) {
+                  Navigator.pop(context, code);
+                },
+          );
+        },
+      );
+    },
   );
 }
