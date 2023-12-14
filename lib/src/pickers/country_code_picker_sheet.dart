@@ -10,7 +10,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
   EdgeInsets filterTextFieldPadding =
       const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   CustomizationBuilders? customizationBuilders,
-  Color backgroundColor = Colors.white,
+  Color Function()? backgroundColor,
   double maxSize = 1,
   double initialSize = 0.5,
   double minSize = 0.5,
@@ -25,31 +25,28 @@ Future<CountryCode?> showCountryCodePickerSheet({
   return await showModalBottomSheet(
     isScrollControlled: true,
     useSafeArea: true,
-    backgroundColor: backgroundColor,
+    backgroundColor: backgroundColor?.call() ?? Colors.white,
     shape: shape,
     context: context,
-    builder: (context) => Container(
-      decoration: ShapeDecoration(shape: shape, color: backgroundColor),
-      child: DraggableScrollableSheet(
-        expand: false,
-        maxChildSize: maxSize,
-        initialChildSize: initialSize,
-        minChildSize: minSize,
-        snap: snap,
-        builder: (context, scrollController) {
-          return CountryCodeSelector(
-            countryNameLocale: countryNameLocale,
-            countryListPadding: countryListPadding,
-            filterFieldPadding: filterTextFieldPadding,
-            scrollController: scrollController,
-            customizationBuilders: customizationBuilders,
-            onCountryCodeTap: onCountryCodeTap ??
-                (CountryCode code) {
-                  Navigator.pop(context, code);
-                },
-          );
-        },
-      ),
+    builder: (context) => DraggableScrollableSheet(
+      expand: false,
+      maxChildSize: maxSize,
+      initialChildSize: initialSize,
+      minChildSize: minSize,
+      snap: snap,
+      builder: (context, scrollController) {
+        return CountryCodeSelector(
+          countryNameLocale: countryNameLocale,
+          countryListPadding: countryListPadding,
+          filterFieldPadding: filterTextFieldPadding,
+          scrollController: scrollController,
+          customizationBuilders: customizationBuilders,
+          onCountryCodeTap: onCountryCodeTap ??
+              (CountryCode code) {
+                Navigator.pop(context, code);
+              },
+        );
+      },
     ),
   );
 }
