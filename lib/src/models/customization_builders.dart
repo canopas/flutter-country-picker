@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart'
-    show BuildContext, ScrollController, Widget;
+import 'package:flutter/material.dart'
+    show BuildContext, Color, Colors, EdgeInsets, ScrollController, Widget;
 import 'country_code.dart';
 
 /// A set of builders for customizing the appearance and behavior of a country code selection view.
@@ -24,10 +24,27 @@ class CustomizationBuilders {
   ///Used for separate country list items.
   final Widget Function(BuildContext context, int index)? codeSeparatorBuilder;
 
+  ///Country code list padding
+  ///
+  /// Default: zero
+  final EdgeInsets countryListPadding;
+
+  ///Search country ext field padding
+  ///
+  /// Default: top: 16, left: 16, bottom: 8, right: 16
+  final EdgeInsets searchFieldPadding;
+
+
+  final Color backgroundColor;
+
   const CustomizationBuilders({
     this.codeBuilder,
     this.codeSeparatorBuilder,
     this.textFieldBuilder,
     this.countryListBuilder,
+    this.countryListPadding = const EdgeInsets.all(0),
+    this.searchFieldPadding =
+        const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
+    this.backgroundColor = Colors.white,
   });
 }

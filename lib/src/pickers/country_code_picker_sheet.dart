@@ -6,9 +6,6 @@ import '../models/customization_builders.dart';
 Future<CountryCode?> showCountryCodePickerSheet({
   required BuildContext context,
   void Function(CountryCode code)? onCountryCodeTap,
-  EdgeInsets countryListPadding = const EdgeInsets.all(0),
-  EdgeInsets filterTextFieldPadding =
-      const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   CustomizationBuilders? customizationBuilders,
   Color backgroundColor = Colors.white,
   double maxSize = 1,
@@ -37,8 +34,6 @@ Future<CountryCode?> showCountryCodePickerSheet({
       builder: (context, scrollController) {
         return CountryCodeSelector(
           countryNameLocale: countryNameLocale,
-          countryListPadding: countryListPadding,
-          filterFieldPadding: filterTextFieldPadding,
           scrollController: scrollController,
           customizationBuilders: customizationBuilders,
           onCountryCodeTap: onCountryCodeTap ??

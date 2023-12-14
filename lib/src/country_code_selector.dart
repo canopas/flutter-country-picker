@@ -11,15 +11,10 @@ class CountryCodeSelector extends StatefulWidget {
   final String? countryNameLocale;
   final ScrollController? scrollController;
   final void Function(CountryCode code)? onCountryCodeTap;
-  final EdgeInsets countryListPadding;
-  final EdgeInsets filterFieldPadding;
   final CustomizationBuilders? customizationBuilders;
 
   const CountryCodeSelector({
     super.key,
-    this.countryListPadding = const EdgeInsets.all(0),
-    this.filterFieldPadding =
-        const EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
     this.scrollController,
     required this.onCountryCodeTap,
     this.customizationBuilders,
@@ -74,7 +69,7 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
                 widget.customizationBuilders?.textFieldBuilder?.call(_filter) ??
                     const SizedBox(),
             child: DefaultCountryCodeFilterTextField(
-              margin: widget.filterFieldPadding,
+              margin: widget.customizationBuilders?.searchFieldPadding,
               filter: _filter,
             )),
         Expanded(
@@ -88,8 +83,9 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
               controller: widget.scrollController,
               child: ListView.separated(
                 controller: widget.scrollController,
-                padding:
-                    widget.countryListPadding + MediaQuery.of(context).padding,
+                padding: (widget.customizationBuilders?.countryListPadding ??
+                        EdgeInsets.zero) +
+                    MediaQuery.of(context).padding,
                 itemCount: filteredCodes.length,
                 separatorBuilder:
                     widget.customizationBuilders?.codeSeparatorBuilder ??

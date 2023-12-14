@@ -6,13 +6,10 @@ import '../models/customization_builders.dart';
 Future<CountryCode?> showCountryCodePickerDialog({
   required BuildContext context,
   void Function(CountryCode code)? onCountryCodeTap,
-  EdgeInsets countryListPadding = const EdgeInsets.all(0),
-  EdgeInsets filterTextFieldPadding =
-      const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   EdgeInsets margin =
-      const EdgeInsets.symmetric(horizontal: 028, vertical: 100),
+      const EdgeInsets.symmetric(horizontal: 28, vertical: 100),
   CustomizationBuilders? customizationBuilders,
-  Color color = Colors.white,
+  Color backgroundColor = Colors.white,
   BorderSide borderSide = BorderSide.none,
   double elevation = 0.0,
   Color? shadowColor,
@@ -42,12 +39,10 @@ Future<CountryCode?> showCountryCodePickerDialog({
         elevation: elevation,
         surfaceTintColor: surfaceTintColor,
         shadowColor: shadowColor,
-        color: color,
+        color: backgroundColor,
         child: SafeArea(
           child: CountryCodeSelector(
             countryNameLocale: countryNameLocale,
-            countryListPadding: countryListPadding,
-            filterFieldPadding: filterTextFieldPadding,
             customizationBuilders: customizationBuilders,
             onCountryCodeTap: onCountryCodeTap ??
                 (CountryCode code) {

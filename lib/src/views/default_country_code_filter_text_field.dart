@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 ///Default view for the country code filter text field
 class DefaultCountryCodeFilterTextField extends StatelessWidget {
-  final EdgeInsetsGeometry margin;
+  ///Default: top: 16, bottom: 8, left: 16, right: 16
+  final EdgeInsetsGeometry? margin;
   final String hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -13,8 +14,7 @@ class DefaultCountryCodeFilterTextField extends StatelessWidget {
 
   const DefaultCountryCodeFilterTextField({
     super.key,
-    this.margin =
-        const EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
+    this.margin,
     this.hintText = "Search Country",
     this.prefixIcon = const Icon(
       Icons.search_rounded,
@@ -32,7 +32,8 @@ class DefaultCountryCodeFilterTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: margin,
+      padding: margin ??
+          const EdgeInsets.only(top: 16, bottom: 8, left: 16, right: 16),
       child: TextField(
         decoration: InputDecoration(
           hintText: hintText,
