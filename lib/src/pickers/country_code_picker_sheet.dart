@@ -19,6 +19,11 @@ Future<CountryCode?> showCountryCodePickerSheet({
   ),
   String? countryNameLocale,
 }) async {
+  final sheetDefinedSize = initialSize +
+      (MediaQuery.of(context).size.height /
+          MediaQuery.of(context).viewInsets.bottom);
+  final sheetActualSize =
+      sheetDefinedSize < maxSize ? sheetDefinedSize : maxSize;
   return await showModalBottomSheet(
     isScrollControlled: true,
     useSafeArea: true,
@@ -27,8 +32,8 @@ Future<CountryCode?> showCountryCodePickerSheet({
     context: context,
     builder: (context) => DraggableScrollableSheet(
       expand: false,
-      maxChildSize: maxSize + MediaQuery.of(context).viewInsets.bottom,
-      initialChildSize: initialSize + MediaQuery.of(context).viewInsets.bottom,
+      maxChildSize: maxSize,
+      initialChildSize: sheetActualSize,
       minChildSize: minSize,
       snap: snap,
       builder: (context, scrollController) {
