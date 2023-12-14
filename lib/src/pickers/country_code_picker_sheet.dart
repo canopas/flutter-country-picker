@@ -25,29 +25,25 @@ Future<CountryCode?> showCountryCodePickerSheet({
     backgroundColor: backgroundColor,
     shape: shape,
     context: context,
-    builder: (context) => Padding(
-      padding:
-          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-      child: DraggableScrollableSheet(
-        expand: false,
-        maxChildSize: maxSize,
-        initialChildSize: initialSize,
-        minChildSize: minSize,
-        snap: snap,
-        builder: (context, scrollController) {
-          return CountryCodeSelector(
-            shape: shape,
-            countryNameLocale: countryNameLocale,
-            scrollController: scrollController,
-            customizationBuilders: customizationBuilders,
-            backgroundColor: backgroundColor,
-            onCountryCodeTap: onCountryCodeTap ??
-                (CountryCode code) {
-                  Navigator.pop(context, code);
-                },
-          );
-        },
-      ),
+    builder: (context) => DraggableScrollableSheet(
+      expand: false,
+      maxChildSize: maxSize + MediaQuery.of(context).viewInsets.bottom,
+      initialChildSize: initialSize + MediaQuery.of(context).viewInsets.bottom,
+      minChildSize: minSize,
+      snap: snap,
+      builder: (context, scrollController) {
+        return CountryCodeSelector(
+          shape: shape,
+          countryNameLocale: countryNameLocale,
+          scrollController: scrollController,
+          customizationBuilders: customizationBuilders,
+          backgroundColor: backgroundColor,
+          onCountryCodeTap: onCountryCodeTap ??
+              (CountryCode code) {
+                Navigator.pop(context, code);
+              },
+        );
+      },
     ),
   );
 }
