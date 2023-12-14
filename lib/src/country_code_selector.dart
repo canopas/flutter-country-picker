@@ -10,12 +10,14 @@ import 'models/customization_builders.dart';
 class CountryCodeSelector extends StatefulWidget {
   final String? countryNameLocale;
   final ScrollController? scrollController;
+  final Color backgroundColor;
   final void Function(CountryCode code)? onCountryCodeTap;
   final CustomizationBuilders? customizationBuilders;
 
   const CountryCodeSelector({
     super.key,
     this.scrollController,
+    this.backgroundColor = Colors.white,
     required this.onCountryCodeTap,
     this.customizationBuilders,
     this.countryNameLocale,
@@ -60,51 +62,55 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Visibility(
-            visible: widget.customizationBuilders?.textFieldBuilder == null,
-            replacement:
-                widget.customizationBuilders?.textFieldBuilder?.call(_filter) ??
-                    const SizedBox(),
-            child: DefaultCountryCodeFilterTextField(
-              margin: widget.customizationBuilders?.searchFieldPadding,
-              filter: _filter,
-            )),
-        Expanded(
-          child: Visibility(
-            visible: widget.customizationBuilders?.countryListBuilder == null,
-            replacement: widget.customizationBuilders?.countryListBuilder
-                    ?.call(filteredCodes, widget.scrollController) ??
-                const SizedBox(),
-            child: Scrollbar(
-              interactive: true,
-              controller: widget.scrollController,
-              child: ListView.separated(
+    return Container(
+      color: widget.customizationBuilders?.backgroundColor ??
+          widget.backgroundColor,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Visibility(
+              visible: widget.customizationBuilders?.textFieldBuilder == null,
+              replacement: widget.customizationBuilders?.textFieldBuilder
+                      ?.call(_filter) ??
+                  const SizedBox(),
+              child: DefaultCountryCodeFilterTextField(
+                margin: widget.customizationBuilders?.searchFieldPadding,
+                filter: _filter,
+              )),
+          Expanded(
+            child: Visibility(
+              visible: widget.customizationBuilders?.countryListBuilder == null,
+              replacement: widget.customizationBuilders?.countryListBuilder
+                      ?.call(filteredCodes, widget.scrollController) ??
+                  const SizedBox(),
+              child: Scrollbar(
+                interactive: true,
                 controller: widget.scrollController,
-                padding: (widget.customizationBuilders?.countryListPadding ??
-                        EdgeInsets.zero) +
-                    MediaQuery.of(context).padding,
-                itemCount: filteredCodes.length,
-                separatorBuilder:
-                    widget.customizationBuilders?.codeSeparatorBuilder ??
-                        (context, index) => const SizedBox(height: 0),
-                itemBuilder: (context, index) =>
-                    widget.customizationBuilders?.codeBuilder
-                        ?.call(filteredCodes[index]) ??
-                    DefaultCountryCodeListItemView(
-                      locale: widget.countryNameLocale,
-                      code: filteredCodes[index],
-                      onCountryCodeTap: () {
-                        widget.onCountryCodeTap?.call(filteredCodes[index]);
-                      },
-                    ),
+                child: ListView.separated(
+                  controller: widget.scrollController,
+                  padding: (widget.customizationBuilders?.countryListPadding ??
+                          EdgeInsets.zero) +
+                      MediaQuery.of(context).padding,
+                  itemCount: filteredCodes.length,
+                  separatorBuilder:
+                      widget.customizationBuilders?.codeSeparatorBuilder ??
+                          (context, index) => const SizedBox(height: 0),
+                  itemBuilder: (context, index) =>
+                      widget.customizationBuilders?.codeBuilder
+                          ?.call(filteredCodes[index]) ??
+                      DefaultCountryCodeListItemView(
+                        locale: widget.countryNameLocale,
+                        code: filteredCodes[index],
+                        onCountryCodeTap: () {
+                          widget.onCountryCodeTap?.call(filteredCodes[index]);
+                        },
+                      ),
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

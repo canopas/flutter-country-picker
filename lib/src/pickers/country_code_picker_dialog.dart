@@ -42,6 +42,7 @@ Future<CountryCode?> showCountryCodePickerDialog({
         color: backgroundColor,
         child: SafeArea(
           child: CountryCodeSelector(
+            backgroundColor: backgroundColor,
             countryNameLocale: countryNameLocale,
             customizationBuilders: customizationBuilders,
             onCountryCodeTap: onCountryCodeTap ??
