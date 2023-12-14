@@ -35,7 +35,7 @@ class CustomizationBuilders {
   final EdgeInsets searchFieldPadding;
 
   ///It will override backgroundColor provided by widget.
-  final Color backgroundColor;
+  final Color Function()? backgroundColor;
 
   const CustomizationBuilders({
     this.codeBuilder,
@@ -45,6 +45,6 @@ class CustomizationBuilders {
     this.countryListPadding = const EdgeInsets.all(0),
     this.searchFieldPadding =
         const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
-    this.backgroundColor = Colors.white,
+    this.backgroundColor,
   });
 }

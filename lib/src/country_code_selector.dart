@@ -11,6 +11,7 @@ class CountryCodeSelector extends StatefulWidget {
   final String? countryNameLocale;
   final ScrollController? scrollController;
   final Color backgroundColor;
+  final ShapeBorder shape;
   final void Function(CountryCode code)? onCountryCodeTap;
   final CustomizationBuilders? customizationBuilders;
 
@@ -19,6 +20,7 @@ class CountryCodeSelector extends StatefulWidget {
     this.scrollController,
     this.backgroundColor = Colors.white,
     required this.onCountryCodeTap,
+    this.shape = const RoundedRectangleBorder(),
     this.customizationBuilders,
     this.countryNameLocale,
   });
@@ -63,8 +65,11 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: widget.customizationBuilders?.backgroundColor ??
-          widget.backgroundColor,
+      decoration: ShapeDecoration(
+        shape: widget.shape,
+        color: widget.customizationBuilders?.backgroundColor?.call() ??
+            widget.backgroundColor,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

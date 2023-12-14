@@ -33,6 +33,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
       snap: snap,
       builder: (context, scrollController) {
         return CountryCodeSelector(
+          shape: shape,
           countryNameLocale: countryNameLocale,
           scrollController: scrollController,
           customizationBuilders: customizationBuilders,
