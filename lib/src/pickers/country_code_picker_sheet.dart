@@ -10,7 +10,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
   EdgeInsets filterTextFieldPadding =
       const EdgeInsets.only(top: 16, left: 16, bottom: 8, right: 16),
   CustomizationBuilders? customizationBuilders,
-  Color Function()? backgroundColor,
+  Color backgroundColor = Colors.white,
   double maxSize = 1,
   double initialSize = 0.5,
   double minSize = 0.5,
@@ -25,7 +25,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
   return await showModalBottomSheet(
     isScrollControlled: true,
     useSafeArea: true,
-    backgroundColor: backgroundColor?.call() ?? Colors.white,
+    backgroundColor: backgroundColor,
     shape: shape,
     context: context,
     builder: (context) => DraggableScrollableSheet(
