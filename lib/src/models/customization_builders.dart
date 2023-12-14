@@ -34,7 +34,7 @@ class CustomizationBuilders {
   /// Default: top: 16, left: 16, bottom: 8, right: 16
   final EdgeInsets searchFieldPadding;
 
-
+  ///It will override backgroundColor provided by widget.
   final Color backgroundColor;
 
   const CustomizationBuilders({
