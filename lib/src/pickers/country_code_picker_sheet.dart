@@ -1,3 +1,4 @@
+import 'package:canopas_country_picker/src/utils/utils_functions.dart';
 import 'package:flutter/material.dart';
 import '../country_code_selector.dart';
 import '../models/country_code.dart';
@@ -25,33 +26,29 @@ Future<CountryCode?> showCountryCodePickerSheet({
     backgroundColor: backgroundColor,
     shape: shape,
     context: context,
-    builder: (context) {
-      final sheetDefinedSize = initialSize +
-          (MediaQuery.of(context).size.height /
-              MediaQuery.of(context).viewInsets.bottom);
-      final sheetActualSize =
-          sheetDefinedSize < maxSize ? sheetDefinedSize : maxSize;
-
-      return DraggableScrollableSheet(
-        expand: false,
-        maxChildSize: maxSize,
-        initialChildSize: sheetActualSize,
-        minChildSize: minSize,
-        snap: snap,
-        builder: (context, scrollController) {
-          return CountryCodeSelector(
-            shape: shape,
-            countryNameLocale: countryNameLocale,
-            scrollController: scrollController,
-            customizationBuilders: customizationBuilders,
-            backgroundColor: backgroundColor,
-            onCountryCodeTap: onCountryCodeTap ??
-                (CountryCode code) {
-                  Navigator.pop(context, code);
-                },
-          );
-        },
-      );
-    },
+    builder: (context) => DraggableScrollableSheet(
+      expand: false,
+      maxChildSize: maxSize,
+      initialChildSize: UtilsFunctions.manageSheetSize(
+          context: context,
+          initialSize: initialSize,
+          maxSize: maxSize,
+          minSize: minSize),
+      minChildSize: minSize,
+      snap: snap,
+      builder: (context, scrollController) {
+        return CountryCodeSelector(
+          shape: shape,
+          countryNameLocale: countryNameLocale,
+          scrollController: scrollController,
+          customizationBuilders: customizationBuilders,
+          backgroundColor: backgroundColor,
+          onCountryCodeTap: onCountryCodeTap ??
+              (CountryCode code) {
+                Navigator.pop(context, code);
+              },
+        );
+      },
+    ),
   );
 }
