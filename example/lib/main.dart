@@ -133,19 +133,20 @@ class _CountryPickerDemoState extends State<CountryPickerDemo> {
   Future<CountryCode?> showPickerSheet(BuildContext context) async {
     return await showCountryCodePickerSheet(
       context: context,
-      onCountryCodeTap: (CountryCode code) {
-        setState(() {
-          countryCode = code;
-        });
-        print(countryCode);
-        Navigator.pop(context);
-      },
+
       customizationBuilders: CustomizationBuilders(
           backgroundColor: () => Colors.teal.shade100,
-          codeBuilder: (CountryCode countryCode) {
+          codeBuilder: (CountryCode code) {
             return DefaultCountryCodeListItemView(
-              code: countryCode,
+              code: code,
               nameStyle: kTextStyle,
+              onCountryCodeTap: () {
+                setState(() {
+                  textEditingController.text =
+                  "${code.dialCode}   ${code.name}";
+                });
+                Navigator.pop(context);
+              },
             );
           },
           codeSeparatorBuilder: (context, value) => const Divider(),
