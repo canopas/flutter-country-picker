@@ -1,4 +1,4 @@
-A simple, Customizable Flutter Country picker for picking a country or dialing code with Search functionality. 
+A Simple, Customizable Flutter Country picker for picking a Country or Dialing code with Search functionality. 
 
 ## Preview
 
