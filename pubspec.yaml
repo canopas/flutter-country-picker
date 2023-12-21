@@ -1,5 +1,5 @@
 name: canopas_country_picker
-description: fully customizable Flutter library that allows developers to integrate a feature-rich country code picker into their applications. It includes built-in filtering options for easily selecting and displaying country codes based on search.
+description: A Simple, Customizable Flutter Country picker for picking a Country or Dialing code with Search functionality.
 version: 0.0.1
 repository: https://github.com/canopas/flutter-country-picker
 
