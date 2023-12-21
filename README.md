@@ -2,7 +2,7 @@ Customizable Flutter library for easy integration of a feature-rich country code
 
 ## Preview
 
-<img src="https://github.com/canopas/JetCountrypicker/blob/main/gif/Peek%202022-04-11%2011-46.gif" />
+<img src="https://github.com/canopas/flutter-country-picker/blob/main/gif/sample.gif" />
 
 
 ## How to use
