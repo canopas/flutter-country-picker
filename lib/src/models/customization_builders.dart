@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'
-    show BuildContext, Color, Colors, EdgeInsets, ScrollController, Widget;
+    show BuildContext, Color, EdgeInsets, ScrollController, Widget;
 import 'country_code.dart';
 
 /// A set of builders for customizing the appearance and behavior of a country code selection view.
