@@ -42,7 +42,7 @@ class _CountryCodeSelectorState extends State<CountryCodeSelector> {
                       .toLowerCase()
                       .startsWith(filterText.trim().toLowerCase()) ||
                   element.dialCode.startsWith(filterText.trim()) ||
-                  element.dialCode.startsWith("+${filterText.trim()}"),
+                  element.dialCode.startsWith('+${filterText.trim()}'),
             )
             .toList();
       }
