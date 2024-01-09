@@ -15,7 +15,7 @@ class CountryCodeSelector extends StatefulWidget {
   final void Function(CountryCode code)? onCountryCodeTap;
   final CustomizationBuilders? customizationBuilders;
 
-  const CountryCodeSelector({
+  CountryCodeSelector({
     super.key,
     this.scrollController,
     this.backgroundColor = Colors.white,
@@ -23,7 +23,10 @@ class CountryCodeSelector extends StatefulWidget {
     this.shape = const RoundedRectangleBorder(),
     this.customizationBuilders,
     this.countryNameLocale,
-  });
+  }) : assert(
+            onCountryCodeTap != null &&
+                customizationBuilders?.codeBuilder != null,
+            'Cannot provide both onCountryCodeTap and codeBuilder, as onCountryCodeTap will not work if you have provided codeBuilder.');
 
   @override
   State<CountryCodeSelector> createState() => _CountryCodeSelectorState();
