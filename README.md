@@ -27,6 +27,7 @@ CountryCodeSelector(
    onCountryCodeTap: (CountryCode code) {
       /// Specify country code tap event
    },
+    //Note: Cannot provide both onCountryCodeTap and codeBuilder, as onCountryCodeTap will not work if you have provided codeBuilder.
 )
 ```
 
@@ -72,6 +73,7 @@ For customizations, we are providing the CustomizationBuilders class to customiz
 customizationBuilders: CustomizationBuilders(
   codeBuilder: (CountryCode code) {
     // Return something to change the country list item UI.
+    // Note: onCountryCodeTap will be overridden by codeBuilder in customizationBuilders.
 
    // If want to do some customization in default country code view, you can use
     return DefaultCountryCodeListItemView(
