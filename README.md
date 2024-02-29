@@ -39,6 +39,13 @@ CountryCode code = CountryCode.getCountryCodeByAlpha2(
     countryAlpha2Code:"IN", // its case-insensitive you can use both IN or in
 );
 ```      
+
+You can use Alpha2CountryCode to obtain the current alpha-2 code:
+```dart
+ String countryAlpha2Code = await Alpha2CountryCode.getCurrentCountryCode();
+```
+> Note: Using await Alpha2CountryCode.getCurrentCountryCode() will return the current country alpha-2 code based on the IP location from the 'http://ip-api.com/json/' API.
+> 
 You can also get the current country alpha-2 code based on the user's device region, using PlatformDispatcher [locale](https://api.flutter.dev/flutter/dart-ui/PlatformDispatcher/locale.html).
 ```dart
 CountryCode code = CountryCode.getCountryCodeByAlpha2(
