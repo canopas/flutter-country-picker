@@ -3,6 +3,7 @@ library canopas_country_picker;
 //Models
 export 'src/models/country_code.dart';
 export 'src/models/customization_builders.dart';
+export 'src/models/alpha2_country_code.dart';
 
 //Pickers
 export 'src/pickers/country_code_picker_sheet.dart';
