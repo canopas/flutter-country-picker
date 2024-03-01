@@ -1,3 +1,6 @@
+## 0.0.8
+* Update list of supported platforms
+
 ## 0.0.7
 * Format code
 
