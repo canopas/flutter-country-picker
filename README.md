@@ -40,9 +40,10 @@ CountryCode code = CountryCode.getCountryCodeByAlpha2(
 );
 ```      
 
-You can use Alpha2CountryCode to obtain the current alpha-2 code:
+You can use await Alpha2CountryCode,getCurrentCountryCode() to obtain the current alpha-2 code:
 ```dart
- String countryAlpha2Code = await Alpha2CountryCode.getCurrentCountryCode();
+String countryAlpha2Code = await Alpha2CountryCode.getCurrentCountryCode();
+
 CountryCode code = CountryCode.getCountryCodeByAlpha2(
   countryAlpha2Code: countryAlpha2Code,
 );
