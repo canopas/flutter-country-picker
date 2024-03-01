@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 class Alpha2CountryCode {
-
   /// Retrieves a [CountryCode] from ip address.
   static Future<String> getCurrentCountryCode() async {
     final client = HttpClient();

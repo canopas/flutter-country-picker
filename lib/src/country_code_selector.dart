@@ -24,7 +24,7 @@ class CountryCodeSelector extends StatefulWidget {
     this.customizationBuilders,
     this.countryNameLocale,
   }) : assert(
-  !(onCountryCodeTap != null &&
+            !(onCountryCodeTap != null &&
                 customizationBuilders?.codeBuilder != null),
             'Cannot provide both onCountryCodeTap and codeBuilder, as onCountryCodeTap will not work if you have provided codeBuilder.');
 
