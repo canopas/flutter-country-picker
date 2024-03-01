@@ -2,7 +2,7 @@ A Simple, Customizable Flutter Country picker for picking a Country or Dialing c
 
 ## Preview
 
-<img src="https://github.com/canopas/flutter-country-picker/row/main/gif/sample.gif" width="32%" />
+<img src="https://github.com/canopas/flutter-country-picker/raw/main/gif/sample.gif" width="32%" />
 
 
 ## How to use
