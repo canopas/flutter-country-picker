@@ -43,6 +43,9 @@ CountryCode code = CountryCode.getCountryCodeByAlpha2(
 You can use Alpha2CountryCode to obtain the current alpha-2 code:
 ```dart
  String countryAlpha2Code = await Alpha2CountryCode.getCurrentCountryCode();
+CountryCode code = CountryCode.getCountryCodeByAlpha2(
+  countryAlpha2Code: countryAlpha2Code,
+);
 ```
 > Note: Using await Alpha2CountryCode.getCurrentCountryCode() will return the current country alpha-2 code based on the IP location from the 'http://ip-api.com/json/' API.
 > 
