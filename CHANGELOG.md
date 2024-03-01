@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Update README.md
+
 ## 0.0.5
 
 * Add support to get the current country alpha-2 code based on the user's IP location. 
