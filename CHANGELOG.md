@@ -1,3 +1,6 @@
+## 0.0.9
+* Remove unused code
+
 ## 0.0.8
 * Update list of supported platforms
 

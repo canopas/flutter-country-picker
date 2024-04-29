@@ -43,10 +43,7 @@ Future<CountryCode?> showCountryCodePickerDialog({
             backgroundColor: backgroundColor,
             countryNameLocale: countryNameLocale,
             customizationBuilders: customizationBuilders,
-            onCountryCodeTap: onCountryCodeTap ??
-                (CountryCode code) {
-                  Navigator.pop(context, code);
-                },
+            onCountryCodeTap: onCountryCodeTap,
           ),
         ),
       ),
