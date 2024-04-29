@@ -43,10 +43,7 @@ Future<CountryCode?> showCountryCodePickerSheet({
           scrollController: scrollController,
           customizationBuilders: customizationBuilders,
           backgroundColor: backgroundColor,
-          onCountryCodeTap: onCountryCodeTap ??
-              (CountryCode code) {
-                Navigator.pop(context, code);
-              },
+          onCountryCodeTap: onCountryCodeTap,
         );
       },
     ),
