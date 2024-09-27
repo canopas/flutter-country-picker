@@ -63,6 +63,17 @@ class CountryCode {
             .first;
   }
 
+  /// Retrieves a list of [CountryCode] object by its dial code.
+  /// Dial Code Examples: +1, +91
+  static List<CountryCode> getCountryCodesByDialCode(
+      {required String? dialCode}) {
+    return CountryCodesConst.allCountryCodes
+        .where(
+          (countryCode) => countryCode.dialCode == dialCode,
+        )
+        .toList();
+  }
+
   static List<CountryCode> get allCodes => CountryCodesConst.allCountryCodes;
 
   String get dialCodeWithoutPlusPrefix => dialCode.toString().substring(1);

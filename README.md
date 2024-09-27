@@ -71,6 +71,16 @@ CountryCode code = CountryCode.getCountryCodeByDialCode(
     dialCode: "+91",
 );
 ```
+> Note: Instead of using a dial code, which can be shared by multiple countries, we recommend using the alpha-2 code.
+
+<br/>
+
+How to get a country codes from the country [dial code](https://en.wikipedia.org/wiki/List_of_country_calling_codes),
+```dart
+List<CountryCode> code = CountryCode.getCountryCodesByDialCode(
+    dialCode: "+47",
+);
+```
 
 <br/>
 
