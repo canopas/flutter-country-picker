@@ -1,3 +1,6 @@
+git a## 0.0.10
+* Add support to get list of country code from dial-code.
+
 ## 0.0.9
 * Remove unused code
 
