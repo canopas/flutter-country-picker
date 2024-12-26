@@ -138,7 +138,7 @@ For bugs, feedback, questions and discussions please use the [Github Issues](htt
 
 ## Credits
 Canopas Country Picker is owned and maintained by the [Canopas team](https://canopas.com/).
-You can follow us on Twitter at [@canopas_eng](https://x.com/canopas_eng) for project updates and releases.
+You can follow us on Twitter at [@canopassoftware](https://x.com/canopassoftware) for project updates and releases.
 
 We regularly upload blogs on new topics, which you can read [here](https://blog.canopas.com/).
 
